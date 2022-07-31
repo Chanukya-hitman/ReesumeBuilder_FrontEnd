@@ -11,26 +11,28 @@ import axios from 'axios'
 const { TabPane } = Tabs;
 
 function Profile() {
-  const [loading,setLoading]=useState(false)
+  const [loading, setLoading] = useState(false)
+  const user = JSON.parse(localStorage.getItem('resume-user'));
   const onFinish = async (values) => {
     setLoading(true);
     try {
-        const result = await axios.post('/api/users/update', values)
-        setLoading(false);
-        console.log(result);
-        message.success(result.data.message);
+      const result = await axios.post('/api/users/update', { ...values, _id: user._id });
+      localStorage.setItem('resume-user', JSON.stringify(result.data))
+      setLoading(false);
+
+      message.success("Profile Updated Successfully");
     } catch (error) {
-        setLoading(false);
-        message.error('Registration failed')
+      setLoading(false);
+      message.error('Updatation failed');
     }
-};
+  };
 
   return (
     <DefaultLayout>
-      {loading && <Spin size='large'></Spin>}
+      {loading && <Spin size='large' />}
       <div className="update-profile">
         <h2>Update Profile</h2>
-        <Form layout="vertical" onFinish={onFinish}>
+        <Form layout="vertical" onFinish={onFinish} initialValues={user}>
           <Tabs defaultActiveKey="1" >
             <TabPane tab="Personal Info" key="1">
               <PersonalInfo />

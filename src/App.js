@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
+import Templates from './pages/templates/Index';
 
 function App() {
     return (
@@ -23,6 +24,9 @@ function App() {
 
                     <Route path='/profile'
                         element={<ProtectedRoute>< Profile /></ProtectedRoute>} />
+
+                    <Route path='/templates/:id'
+                        element={<ProtectedRoute>< Templates /></ProtectedRoute>} />
 
                     <Route path='/login'
                         element={< Login />} />

@@ -1,5 +1,6 @@
 .layout {
     height: 100vh;
+    padding: 30px;
 }
 
 .header {
@@ -24,4 +25,5 @@
     border-radius: 10px;
     box-shadow: 0 0 3px rgba(128, 128, 128, 0.315);
     padding: 10px;
+    height: 87%;
 }
