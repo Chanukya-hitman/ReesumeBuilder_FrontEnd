@@ -2,6 +2,8 @@ import { Button, Dropdown, Menu } from 'antd'
 import React from 'react'
 import './../resources/defaultlayout.css'
 import { Link, useNavigate } from "react-router-dom"
+import { UserOutlined } from '@ant-design/icons';
+
 function DefaultLayout(props) {
 
   const data = JSON.parse(localStorage.getItem('resume-user'))
@@ -28,9 +30,9 @@ function DefaultLayout(props) {
   return (
     <div className="layout">
       <div className="header">
-        <h1 style={{ color: 'white' }}>Resume</h1>
+        <h1 onClick = {()=>navigate(`/home`) }  style={{cursor:'pointer', color: 'white' }}>Resume</h1>
         <Dropdown overlay={menu} placement="bottomLeft">
-          <Button>{data.username}</Button>
+          <Button icon={<UserOutlined />}>{data.username}</Button>
         </Dropdown>
       </div>
       <div className="content" style={{overflow:'scroll'}}>

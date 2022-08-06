@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    
 }
 
 .auth-parent form {
@@ -12,7 +14,17 @@
     padding: 20px;
     float: right !important;
     left: 20%;
+    background-color: white;
 }
+/*
+.brand{
+    font-size: 150px !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+}*/
 
 #frm {
     float: right;
@@ -24,7 +36,7 @@
 }
 
 .bg {
-    background-image: url("C:\Users\Chanukya\Desktop\RB\users\src\assets\Profiling-amico.png");
+    background-image: url("../assets/Profiling-amico.png");
     background-color: #cccccc;
     /* Used if the image is unavailable */
     max-width: 100%;
