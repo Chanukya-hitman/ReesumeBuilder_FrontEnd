@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: 'Gill Sans', cursive !important;
+    /* font-family: Georgia !important; */
 }
 
 button {
@@ -37,12 +38,13 @@ textarea:focus {
     width: 200px !important;
 }
 
-.divider{
+.divider {
     width: 100px;
     height: 2px;
     background-color: gray;
 }
-.back-btn{
+
+.back-btn {
     background-color: white !important;
     color: black !important;
     border: 1px solid black !important;

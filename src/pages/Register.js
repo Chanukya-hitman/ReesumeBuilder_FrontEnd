@@ -26,6 +26,7 @@ function Register() {
     })
 
     return (
+        <div className='bg'>
         <div className="auth-parent">
             {loading && (<Spin size='Large' />)}
             <Form layout='vertical' onFinish={onFinish}>
@@ -50,6 +51,7 @@ function Register() {
                     <Button type='primary' htmlType='submit' >Register</Button>
                 </div>
             </Form>
+        </div>
         </div>
     );
 }
