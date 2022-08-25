@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../resources/templates.css'
 
-function Template2() {
+function Template3() {
   const user = JSON.parse(localStorage.getItem('resume-user'))
   return (
 
@@ -17,7 +17,7 @@ function Template2() {
       <div className="divider mt-3"></div>
 
       <div className="objective mt-3">
-        <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Objective</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Objective</h3>
         <hr />
         <p>{user.objective}</p>
       </div>
@@ -25,7 +25,7 @@ function Template2() {
       <div className="divider mt-3"></div>
 
       <div className="education mt-3">
-        <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Education</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Education</h3>
         <hr />
         {user.education.map((education) => {
           return <div className='d-flex align-items-center'>
@@ -36,10 +36,11 @@ function Template2() {
       </div>
       {
         user.experience.length !== 0 && <>
+
           <div className="divider mt-3"></div>
 
           <div className="experience mt-3">
-            <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Experience</h3>
+            <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Experience</h3>
             <hr />
             {user.experience.map((exp) => {
               return <div className='d-flex align-items-center'>
@@ -51,10 +52,12 @@ function Template2() {
         </>
       }
 
+
+
       <div className="divider mt-3"></div>
 
       <div className="projects mt-3">
-        <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Projects</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Projects</h3>
         <hr />
         {user.projects.map((project) => {
           return <div className='d-flex flex-column'>
@@ -64,10 +67,11 @@ function Template2() {
         })}
       </div>
 
+
       <div className="divider mt-3"></div>
 
       <div className="projects mt-3">
-        <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Skills</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Skills</h3>
         <hr />
         {user.skills.map((skill) => {
           return <p>
@@ -81,4 +85,4 @@ function Template2() {
   )
 }
 
-export default Template2
+export default Template3

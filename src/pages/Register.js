@@ -1,9 +1,37 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Checkbox, Form, Input, message, Spin } from 'antd';
+import { Button, Form, Input, message, Spin } from 'antd';
 import '../resources/authentication.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 function Register() {
+    const [password, setPassword] = useState('');
+    const [cPassword, setCPassword] = useState('');
+    const [showErrorMessage, setShowErrorMessage] = useState(false);
+    const [cPasswordClass, setCPasswordClass] = useState('form-control');
+    const [isCPasswordDirty, setIsCPasswordDirty] = useState(false);
+
+    useEffect(() => {
+        if (isCPasswordDirty) {
+            if(password.length < 7) {
+                message.error("Password length must be more than 8 characters");
+            }
+            if ( password === cPassword) {
+                setShowErrorMessage(false)
+                setCPasswordClass('form-control is-valid')
+            } else {
+                setShowErrorMessage(true)
+                setCPasswordClass('form-control is-invalid')
+            }
+        if (localStorage.getItem('resume-user')) {
+                navigate('/home')
+            }
+        }
+    }, [cPassword])
+
+    const handleCPassword = (e) => {
+        setCPassword(e.target.value);
+        setIsCPasswordDirty(true);
+    }
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const onFinish = async (values) => {
@@ -18,14 +46,8 @@ function Register() {
             message.error('Registration failed')
         }
     };
-
-    useEffect(() => {
-        if (localStorage.getItem('resume-user')) {
-            navigate('/home')
-        }
-    })
-
     return (
+        <div className='bg'>
         <div className="auth-parent">
             {loading && (<Spin size='Large' />)}
             <Form layout='vertical' onFinish={onFinish}>
@@ -37,21 +59,25 @@ function Register() {
                     <Input />
                 </Form.Item>
 
-                <Form.Item name='password' label='password'>
+                <Form.Item label="password" name="password" className="form-control" id="password" value={password}
+                        onChange={(e) => { setPassword(e.target.value) }} >
                     <Input />
                 </Form.Item>
-
-                <Form.Item name='cpassword' label='Confirm Password'>
+                <Form.Item label="Confirm password" name="password" className={cPasswordClass} id="confirmPassword" value={cPassword}
+                        onChange={handleCPassword} >
                     <Input />
+                  {showErrorMessage && isCPasswordDirty ? <div> *Password and confirm password did not match* </div> : " "}
                 </Form.Item>
-
+                
                 <div className="d-flex align-items-center justify-content-between">
+                
                     <Link to='/login'>Click here to Login</Link>
-                    <Button type='primary' htmlType='submit' >Register</Button>
+                    <Button type='primary' htmlType='submit'  >Register</Button>
                 </div>
             </Form>
+        </div>
         </div>
     );
 }
 
-export default Register
+export default Register 

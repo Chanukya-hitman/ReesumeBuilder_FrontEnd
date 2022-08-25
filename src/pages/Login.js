@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button, Checkbox, Form, Input, message, Spin } from 'antd';
+import { Button, Form, Input, message, Spin } from 'antd';
 import '../resources/authentication.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -18,7 +18,7 @@ function Login() {
             navigate('/home')
         } catch (error) {
             setLoading(false)
-            message.error('Login failed')
+            message.error('UserName / Password wrong')
         }
     };
 

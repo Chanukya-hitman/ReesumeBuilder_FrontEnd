@@ -34,7 +34,8 @@ function Template1() {
           </div>
         })}
       </div>
-
+      {
+        user.experience.length !== 0 && <>
       <div className="divider mt-3"></div>
 
       <div className="experience mt-3">
@@ -47,7 +48,8 @@ function Template1() {
           </div>
         })}
       </div>
-
+      </>
+}
       <div className="divider mt-3"></div>
 
       <div className="projects mt-3">
