@@ -17,7 +17,7 @@ function Template3() {
       <div className="divider mt-3"></div>
 
       <div className="objective mt-3">
-        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Objective</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', }}>Objective</h3>
         <hr />
         <p>{user.objective}</p>
       </div>
@@ -25,7 +25,7 @@ function Template3() {
       <div className="divider mt-3"></div>
 
       <div className="education mt-3">
-        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Education</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', }}>Education</h3>
         <hr />
         {user.education.map((education) => {
           return <div className='d-flex align-items-center'>
@@ -40,7 +40,7 @@ function Template3() {
           <div className="divider mt-3"></div>
 
           <div className="experience mt-3">
-            <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Experience</h3>
+            <h3 style={{ backgroundColor: 'lightsteelblue', }}>Experience</h3>
             <hr />
             {user.experience.map((exp) => {
               return <div className='d-flex align-items-center'>
@@ -56,28 +56,57 @@ function Template3() {
 
       <div className="divider mt-3"></div>
 
-      <div className="projects mt-3">
-        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Projects</h3>
-        <hr />
-        {user.projects.map((project) => {
-          return <div className='d-flex flex-column'>
-            <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
-            <p> {project.description}</p>
+      {
+        user.projects.length !== 0 && <>
+          <div className="projects mt-3">
+            <h3 style={{ backgroundColor: 'lightsteelblue', }}>Projects</h3>
+            <hr />
+            {user.projects.map((project) => {
+              return <div className='d-flex flex-column'>
+                <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
+                <p> {project.description}</p>
+              </div>
+            })}
           </div>
-        })}
-      </div>
-
+        </>
+      }
 
       <div className="divider mt-3"></div>
 
       <div className="projects mt-3">
-        <h3 style={{ backgroundColor: 'lightsteelblue', padding: 10 }}>Skills</h3>
+        <h3 style={{ backgroundColor: 'lightsteelblue', }}>Skills</h3>
         <hr />
         {user.skills.map((skill) => {
           return <p>
             {skill.technology}
           </p>
         })}
+      </div>
+
+      <div className="divider mt-3"></div>
+      {
+        user.intrests.length !== 0 && <>
+
+          <div className="intrests mt-3">
+            <h3 style={{ backgroundColor: 'lightsteelblue', }}>Areas of Intrest</h3>
+
+            {user.intrests.map((a) => {
+              return <p>
+                {a.area}
+              </p>
+            })}
+
+          </div></>
+      }
+
+      <div className="divider mt-3"></div>
+      <div className="declaration mt-3">
+        <h3 style={{ backgroundColor: 'lightsteelblue', }}>Declaration</h3>
+        <hr />
+        <div>
+          <p>{user.declaration} </p>
+        </div>
+
       </div>
 
 

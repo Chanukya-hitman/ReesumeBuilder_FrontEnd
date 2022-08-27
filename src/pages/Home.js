@@ -3,6 +3,9 @@ import DefaultLayout from '../components/DefaultLayout'
 import templateimg from '../resources/templates/template1.png'
 import template2img from '../resources/templates/template2.png'
 import template3img from '../resources/templates/template3.png'
+import template4img from '../resources/templates/template4.png'
+// import template5img from '../resources/templates/template5.png'
+
 import '../resources/templates.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -20,7 +23,15 @@ function Home() {
     {
       title:"Highlighted Blue section Resume",
       image: template3img,
-    }
+    },
+    {
+      title:"Customized Resume",
+      image: template4img,
+    },
+    {
+      title:"Customized Resume",
+      image: template4img,
+    },
   ];
   return (
     <DefaultLayout>

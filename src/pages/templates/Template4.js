@@ -1,0 +1,138 @@
+import React from 'react'
+import '../../resources/templates.css'
+
+function Template4() {
+    const user = JSON.parse(localStorage.getItem('resume-user'))
+    return (
+
+        <div className='template4-parent'>
+            <div class="container">
+                <div class="left-side">
+                    <div className="top d-flex flex-column">
+                        <h1>{user.firstName.toUpperCase()} {user.lastName.toUpperCase()}</h1>
+                        <div>
+                            <p>{user.email}</p>
+                            <p>{user.address}</p>
+                            <p>{user.mobileNumber}</p>
+                        </div>
+                    </div>
+                    <div className="divider mt-3"></div>
+                    <div className="projects mt-3">
+                        <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Skills</h3>
+                        <hr />
+                        {user.skills.map((skill) => {
+                            return <p>
+                                {skill.technology}
+                            </p>
+                        })}
+                    </div>
+                    {
+                        user.intrests.length !== 0 && <>
+                            <div className="divider mt-3"></div>
+
+                            <div className="intrests mt-3">
+                                <h3 >Areas of Intrest</h3>
+
+                                {user.intrests.map((a) => {
+                                    return <p>
+                                        {a.area}
+                                    </p>
+                                })}
+
+                            </div></>
+                    }
+                </div>
+
+                <div class="right-side">
+                    <div className="divider mt-3"></div>
+
+                    <div className="objective mt-3">
+                        <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Objective</h3>
+                        <hr />
+                        <p>{user.objective}</p>
+                    </div>
+
+                    <div className="divider mt-3"></div>
+
+                    <div className="education mt-3">
+                        <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Education</h3>
+                        <hr />
+                        {user.education.map((education) => {
+                            return <div className='d-flex align-items-center'>
+                                <h6 ><b>{education.range} : &nbsp;</b></h6>
+                                <p> <b>{education.qualification}</b> with  <b>{education.percentage}%</b> in {education.institution}</p>
+                            </div>
+                        })}
+                    </div>
+                    {
+                        user.experience.length !== 0 && <>
+
+                            <div className="divider mt-3"></div>
+
+                            <div className="experience mt-3">
+                                <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Experience</h3>
+                                <hr />
+                                {user.experience.map((exp) => {
+                                    return <div className='d-flex align-items-center'>
+                                        <h6 ><b>{exp.range} : &nbsp;</b></h6>
+                                        <p> <b>{exp.company}</b> in{" "}  <b>{exp.place}</b></p>
+                                    </div>
+                                })}
+                            </div>
+                        </>
+                    }
+
+
+
+                    <div className="divider mt-3"></div>
+                    {
+                        user.projects.length !== 0 && <>
+                            <div className="projects mt-3">
+                                <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Projects</h3>
+                                <hr />
+                                {user.projects.map((project) => {
+                                    return <div className='d-flex flex-column'>
+                                        <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
+                                        <p> {project.description}</p>
+                                    </div>
+                                })}
+                            </div>
+                        </>
+                    }
+
+                    {
+                        user.achievements.length !== 0 && <>
+
+                            <div className="divider mt-3"></div>
+                            <div className="achievements mt-3">
+                                <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Achievements | Awards | Certifications</h3>
+                                <hr />
+                                {user.achievements.map((a) => {
+                                    return <p>
+                                        {a.list}
+                                    </p>
+                                })}
+                            </div></>
+                    }
+
+
+                    <div className="divider mt-3"></div>
+                    <div className="declaration mt-3">
+                        <h3 style={{ backgroundColor: '#6191a7', padding: 10 }}>Declaration</h3>
+                        <hr />
+                        <div>
+                            <p>{user.declaration} </p>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Template4

@@ -53,16 +53,20 @@ function Template2() {
 
       <div className="divider mt-3"></div>
 
-      <div className="projects mt-3">
-        <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Projects</h3>
-        <hr />
-        {user.projects.map((project) => {
-          return <div className='d-flex flex-column'>
-            <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
-            <p> {project.description}</p>
+      {
+        user.projects.length !== 0 && <>
+          <div className="projects mt-3">
+            <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Projects</h3>
+            <hr />
+            {user.projects.map((project) => {
+              return <div className='d-flex flex-column'>
+                <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
+                <p> {project.description}</p>
+              </div>
+            })}
           </div>
-        })}
-      </div>
+        </>
+      }
 
       <div className="divider mt-3"></div>
 
@@ -74,6 +78,30 @@ function Template2() {
             {skill.technology}
           </p>
         })}
+      </div>
+      <div className="divider mt-3"></div>
+      {
+        user.intrests.length !== 0 && <>
+
+          <div className="intrests mt-3">
+            <h3 style={{ backgroundColor: 'gray', padding: 10 }} >Areas of Intrest</h3>
+
+            {user.intrests.map((a) => {
+              return <p>
+                {a.area}
+              </p>
+            })}
+
+          </div></>
+      }
+      <div className="divider mt-3"></div>
+      <div className="declaration mt-3">
+        <h3 style={{ backgroundColor: 'gray', padding: 10 }}>Declaration</h3>
+        <hr />
+        <div>
+          <p>{user.declaration} </p>
+        </div>
+
       </div>
 
 

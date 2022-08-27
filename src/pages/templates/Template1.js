@@ -36,43 +36,90 @@ function Template1() {
       </div>
       {
         user.experience.length !== 0 && <>
+          <div className="divider mt-3"></div>
+
+          <div className="experience mt-3">
+            <h3>Experience</h3>
+            <hr />
+            {user.experience.map((exp) => {
+              return <div className='d-flex align-items-center'>
+                <h6 ><b>{exp.range} : &nbsp;</b></h6>
+                <p> <b>{exp.company}</b> in{" "}  <b>{exp.place}</b></p>
+              </div>
+            })}
+          </div>
+        </>
+      }
       <div className="divider mt-3"></div>
 
-      <div className="experience mt-3">
-        <h3>Experience</h3>
-        <hr />
-        {user.experience.map((exp) => {
-          return <div className='d-flex align-items-center'>
-            <h6 ><b>{exp.range} : &nbsp;</b></h6>
-            <p> <b>{exp.company}</b> in{" "}  <b>{exp.place}</b></p>
+      {
+        user.projects.length !== 0 && <>
+          <div className="projects mt-3">
+            <h3 >Projects</h3>
+            <hr />
+            {user.projects.map((project) => {
+              return <div className='d-flex flex-column'>
+                <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
+                <p> {project.description}</p>
+              </div>
+            })}
           </div>
-        })}
-      </div>
-      </>
-}
+        </>
+      }
+
+      {
+        user.achievements.length !== 0 && <>
+          <div className="divider mt-3"></div>
+          <div className="achievements mt-3">
+            <h3 >Achievements | Awards | Certifications</h3>
+            <hr />
+            {user.achievements.map((a) => {
+              return <p>
+                {a.list}
+              </p>
+            })}
+
+          </div></>
+      }
+
       <div className="divider mt-3"></div>
 
       <div className="projects mt-3">
-        <h3>Projects</h3>
-        <hr />
-        {user.projects.map((project) => {
-          return <div className='d-flex flex-column'>
-            <h6 ><b>{project.title} [{project.range}] {" "}</b></h6>
-            <p> {project.description}</p>
-          </div>
-        })}
-      </div>
-
-      <div className="divider mt-5"></div>
-
-      <div className="projects mt-5">
         <h3>Skills</h3>
         <hr />
         {user.skills.map((skill) => {
           return <p>
-          {skill.technology}
+            {skill.technology}
           </p>
         })}
+      </div>
+
+      <div className="divider mt-3"></div>
+      {
+        user.intrests.length !== 0 && <>
+
+          <div className="intrests mt-3">
+            <h3 >Areas of Intrest</h3>
+
+            {user.intrests.map((a) => {
+              return <p>
+                {a.area}
+              </p>
+            })}
+
+          </div></>
+      }
+
+      
+
+      <div className="divider mt-3"></div>
+      <div className="declaration mt-3">
+        <h3 >Declaration</h3>
+        <hr />
+        <div>
+          <p>{user.declaration} </p>
+        </div>
+
       </div>
 
 

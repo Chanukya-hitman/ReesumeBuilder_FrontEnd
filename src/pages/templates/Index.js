@@ -7,6 +7,8 @@ import Template1 from './Template1'
 import Template2 from './Template2'
 import Template3 from './Template3'
 import { Button } from 'antd'
+import Template4 from './Template4'
+import Template5 from './Template5'
 
 function Templates() {
   const componentRef = useRef();
@@ -27,6 +29,13 @@ function Templates() {
       case '3': {
         return <Template3 />;
       }
+      case '4': {
+        return <Template4 />;
+      }
+      case '5': {
+        return <Template5 />;
+      }
+
 
     }
   }

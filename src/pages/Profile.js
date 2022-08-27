@@ -4,8 +4,11 @@ import DefaultLayout from '../components/DefaultLayout'
 import { Button, Form, message, Spin, Tabs } from 'antd';
 import PersonalInfo from '../components/PersonalInfo';
 import SkillsEducation from '../components/SkillsEducation';
+import Achievement from '../components/Achievement';
+import Intrest from '../components/Intrest';
 import ExperienceProjects from '../components/ExperienceProjects';
 import axios from 'axios'
+import Declaration from '../components/Declaration';
 
 
 const { TabPane } = Tabs;
@@ -42,6 +45,15 @@ function Profile() {
             </TabPane>
             <TabPane tab="Experience / Project" key="3">
               <ExperienceProjects />
+            </TabPane>
+            <TabPane tab="Achievements | Awards" key="4">
+              <Achievement />
+            </TabPane>
+            <TabPane tab="Areas of Intrest" key="5">
+              <Intrest />
+            </TabPane>
+            <TabPane tab="Declaration" key="6">
+              <Declaration />
             </TabPane>
           </Tabs>
           <Button htmlType="submit">UPDATE</Button>

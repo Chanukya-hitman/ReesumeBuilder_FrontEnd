@@ -35,7 +35,43 @@
     font-size: 16px !important;
     padding: 0 20px;
 }
-
+.container{
+    position: relative;
+    /* width: 100%;
+    max-width: 1000px;
+    max-height: 1000px; */
+    background: #fff;
+    /* margin: 50px; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+}
+.container .left-side{
+    position: relative;
+    background:#6191a7;
+    padding: 40px;
+}
+.container .right-side{
+    position: relative;
+    background: rgb(241, 242, 243);
+    padding: 40px;
+}
+.container5 .left-side1{
+    position: relative;
+    padding: 40px;
+    border-style: none;
+    border-right-style: solid;
+}
+.container5 .right-side1{
+    position: relative;
+    padding: 40px;
+}
+.head{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 42px;
+    margin-right: 42px;
+}
 
 
 
@@ -75,4 +111,79 @@
 .template1-parent h6 {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/*template 4*/
+.template4-parent h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+.template4-parent {
+    color: rgba(0, 0, 0, 0.77);
+    
+}
+
+.template4-parent p {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 2px !important;
+    font-size: 16px;
+}
+
+
+.template4-parent h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+.template4-parent h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+/* 
+.template5-parent h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+
+.template5-parent p {
+    padding-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-top: 2px !important;
+    font-size: 16px;
+}
+
+
+
+.template5-parent h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.77);
+}
+
+.template5-parent h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+} */
+
+
+.template5-parent {
+    color: rgba(0, 0, 0, 0.77);
+    /* padding: 100px; */
+}
+.container5{
+    position: relative;
+    /* width: 100%; */
+    /* max-width: 1000px;
+    max-height: 1000px; */
+    background: #fff;
+    /* margin: 50px; */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
 }

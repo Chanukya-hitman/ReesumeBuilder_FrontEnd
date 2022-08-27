@@ -19,17 +19,17 @@ function SkillsEducation() {
                                             name={[name, 'qualification']}
                                             rules={[{ required: true, message: 'Missing Qualification' }]}
                                         >
-                                            <Input placeholder="Qualification" />
+                                            <Input placeholder="Qualification - Stream" />
                                         </Form.Item>
                                     </div>
 
                                     <div className="col-md-2">
                                         <Form.Item
                                             {...restField}
-                                            name={[name, 'percentage']}
-                                            rules={[{ required: true, message: 'Missing Percentage' }]}
+                                            name={[name, 'cgpa']}
+                                            rules={[{ required: true, message: 'Missing CGPA' }]}
                                         >
-                                            <Input placeholder="Percentage" />
+                                            <Input placeholder="CGPA" />
                                         </Form.Item>
                                     </div>
                                     <div className="col-md-3">
@@ -38,7 +38,7 @@ function SkillsEducation() {
                                             name={[name, 'institution']}
                                             rules={[{ required: true, message: 'Missing Institution Name' }]}
                                         >
-                                            <Input placeholder="Institution" />
+                                            <Input placeholder="Institution - Place" />
                                         </Form.Item>
                                     </div>
                                     <div className="col-md-3">
