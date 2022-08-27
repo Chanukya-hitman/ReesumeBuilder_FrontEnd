@@ -5,7 +5,7 @@ import { Button, Form, Input, Space } from 'antd';
 function Intrest() {
     return (
         <div>
-                <h4><b>Areas of Intrest</b></h4>
+                <h4><b>Areas of Intrest</b></h4> 
                 <hr />
                 <Form.List name="intrests">
                     {(fields, { add, remove }) => (
