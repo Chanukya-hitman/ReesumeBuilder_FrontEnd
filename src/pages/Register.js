@@ -47,36 +47,38 @@ function Register() {
         }
     };
     return (
-        <div className='bg'>
-        <div className="auth-parent">
-            {loading && (<Spin size='Large' />)}
-            <Form layout='vertical' onFinish={onFinish}>
+        <><div>
+            <h1 class="heading">Resume Builder</h1>
+        </div><div className='bg'>
+                <div className="auth-parent">
+                    {loading && (<Spin size='Large' />)}
+                    <Form layout='vertical' onFinish={onFinish}>
 
-                <h1>Register</h1>
-                <hr></hr>
+                        <h1>Register</h1>
+                        <hr></hr>
 
-                <Form.Item name='username' label='username'>
-                    <Input />
-                </Form.Item>
+                        <Form.Item name='username' label='username'>
+                            <Input />
+                        </Form.Item>
 
-                <Form.Item label="password" name="password" className="form-control" id="password" value={password}
-                        onChange={(e) => { setPassword(e.target.value) }} >
-                    <Input />
-                </Form.Item>
-                <Form.Item label="Confirm password" name="password" className={cPasswordClass} id="confirmPassword" value={cPassword}
-                        onChange={handleCPassword} >
-                    <Input />
-                  {showErrorMessage && isCPasswordDirty ? <div> *Password and confirm password did not match* </div> : " "}
-                </Form.Item>
-                
-                <div className="d-flex align-items-center justify-content-between">
-                
-                    <Link to='/login'>Click here to Login</Link>
-                    <Button type='primary' htmlType='submit'  >Register</Button>
+                        <Form.Item label="password" name="password" className="form-control" id="password" value={password}
+                            onChange={(e) => { setPassword(e.target.value); } }>
+                            <Input />
+                        </Form.Item>
+                        <Form.Item label="Confirm password" name="password" className={cPasswordClass} id="confirmPassword" value={cPassword}
+                            onChange={handleCPassword}>
+                            <Input />
+                            {showErrorMessage && isCPasswordDirty ? <div> *Password and confirm password did not match* </div> : " "}
+                        </Form.Item>
+
+                        <div className="d-flex align-items-center justify-content-between">
+
+                            <Link to='/login'>Click here to Login</Link>
+                            <Button type='primary' htmlType='submit'>Register</Button>
+                        </div>
+                    </Form>
                 </div>
-            </Form>
-        </div>
-        </div>
+            </div></>
     );
 }
 

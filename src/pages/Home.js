@@ -1,55 +1,48 @@
 import React from 'react'
 import DefaultLayout from '../components/DefaultLayout'
-import templateimg from '../resources/templates/template1.png'
-import template2img from '../resources/templates/template2.png'
-import template3img from '../resources/templates/template3.png'
-import template4img from '../resources/templates/template4.png'
-// import template5img from '../resources/templates/template5.png'
 
+import { Link } from 'react-router-dom';
 import '../resources/templates.css'
-import { useNavigate } from 'react-router-dom'
+
+import { Button } from "rsuite";
+
 
 function Home() {
-  const navigate = useNavigate()
- const templates=[
-    {
-      title:'Simple Resume',
-      image: templateimg,
-    },
-    {
-      title:'Highlighted Section Resume',
-      image: template2img,
-    },
-    {
-      title:"Highlighted Blue section Resume",
-      image: template3img,
-    },
-    {
-      title:"Customized Resume",
-      image: template4img,
-    },
-    {
-      title:"Customized Resume",
-      image: template4img,
-    },
-  ];
+
+
   return (
-    <DefaultLayout>
-        <div className='row home'>
-          {templates.map((template , index)=> {
-            return <div className='col-md-4'>
-              <div className='template'>
-              <img src={template.image} height='400'  alt='' style={{width:'100%'}} />
-              <div className='text'> 
-              <p>{template.title}</p>
-              <button onClick={()=> navigate(`/templates/${index + 1}`)}>Try</button>
-              </div>
-              </div>
-            </div>
-          })
-          }
+    <DefaultLayout >
+      <div class="row" >
+        <div class="col hometext" >
+
+          <h1> The Resume that gets the job (done)</h1>
+          <ul>
+            <li> Standing out.</li>
+            <li> Professional.</li>
+            <li> Ready in minutes with our step-by-step builder.</li>
+          </ul>
+          <hr></hr>
+          <h1>Instructions</h1>
+          <ul>
+            <li> Go to your Account</li>
+            <li> Click on Profile Button </li>
+            <li> Fill your details and click on Update</li>
+            <li> Now click on Templates button in Home Page and choose your Template </li>
+            <li> Hence your Resume is ready</li>
+          </ul>
 
         </div>
+        <div class="col">
+          <img src="Profiling-rafiki.png" height={"90%"} width={"90%"}></img>
+          <div className='buttonDiv' >
+
+            <Link to='/home/templates-page'><Button className='buttonn'> See Templates </Button></Link>
+
+
+          </div>
+        </div>
+      </div>
+
     </DefaultLayout>
   )
 }

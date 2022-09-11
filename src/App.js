@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Templates from './pages/templates/Index';
+import TemplatesPage from './pages/TemplatesPage';
 
 function App() {
     return (
@@ -24,6 +25,9 @@ function App() {
 
                     <Route path='/profile'
                         element={<ProtectedRoute>< Profile /></ProtectedRoute>} />
+
+                    <Route path='/home/templates-page'
+                        element={<ProtectedRoute>< TemplatesPage /></ProtectedRoute>} />
 
                     <Route path='/templates/:id'
                         element={<ProtectedRoute>< Templates /></ProtectedRoute>} />

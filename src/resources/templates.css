@@ -6,6 +6,7 @@
     position: relative;
     width:350px;
     
+    
 }
 
 .home .template .text{
@@ -21,7 +22,7 @@
     background-color: black;
     opacity: 0.8;
     color: white !important ;
-    display: flex;
+    display: flex;empty-cells: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -186,4 +187,13 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     
+}
+
+.hometext{
+    padding: 50px;
+    font-size: medium;
+}
+.buttonDiv{
+    float: right;
+    padding-right: 30px;
 }
