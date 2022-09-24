@@ -3,6 +3,9 @@ import { Button, Form, Input, message, Spin } from 'antd';
 import '../resources/authentication.css'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "./ser"
+import { url } from './ser';
+
 function Login() {
     const navigate = useNavigate();
     const [loading,setLoading] = useState(false);
@@ -10,8 +13,9 @@ function Login() {
     const onFinish = async (values) => {
         setLoading(true)
         try {
-            const result = await axios.post('/api/users/login', values)
-            console.log(result);
+            console.log(url,"testing");
+            const result = await axios.post(url+'api/users/login', values)
+            console.log(result,"result");
             message.success('Login Successful');
             localStorage.setItem('resume-user', JSON.stringify(result.data))
             setLoading(false)

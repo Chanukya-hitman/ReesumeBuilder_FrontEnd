@@ -9,6 +9,7 @@ import Intrest from '../components/Intrest';
 import ExperienceProjects from '../components/ExperienceProjects';
 import axios from 'axios'
 import Declaration from '../components/Declaration';
+import { url } from './ser';
 
 
 const { TabPane } = Tabs;
@@ -19,7 +20,7 @@ function Profile() {
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const result = await axios.post('/api/users/update', { ...values, _id: user._id });
+      const result = await axios.post(url+'api/users/update', { ...values, _id: user._id });
       localStorage.setItem('resume-user', JSON.stringify(result.data))
       setLoading(false);
 

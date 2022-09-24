@@ -3,6 +3,7 @@ import { Button, Form, Input, message, Spin } from 'antd';
 import '../resources/authentication.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { url } from './ser';
 function Register() {
     const [password, setPassword] = useState('');
     const [cPassword, setCPassword] = useState('');
@@ -37,7 +38,7 @@ function Register() {
     const onFinish = async (values) => {
         setLoading(true);
         try {
-            const result = await axios.post('/api/users/register', values)
+            const result = await axios.post(url+'api/users/register', values)
             setLoading(false);
             console.log(result);
             message.success(result.data.message);
