@@ -51,4 +51,9 @@
     background-size: contain;
     background-position: left center;
 }
-
+.heading{
+    text-align:center;
+    background:cornflowerblue;
+    margin: 0px;
+    padding: 5px;
+}

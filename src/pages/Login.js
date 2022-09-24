@@ -29,32 +29,36 @@ function Login() {
         }
     })
     return (
-        <div className='bg'>
+        <><div>
+            <h1 class="heading">Resume Builder</h1>
+        </div><div className='bg'>
+               
+                <div className="auth-parent">
+
+                    {loading && (<Spin size='Large' />)}
+
+                    <Form layout='vertical' onFinish={onFinish} id="frm">
 
 
-            <div className="auth-parent">
-                {loading && (<Spin size='Large'/>)}
-                <Form layout='vertical' onFinish={onFinish} id="frm">
+                        <h1>Login</h1>
+                        <hr></hr>
 
-                    <h1>Login</h1>
-                    <hr></hr>
+                        <Form.Item name='username' label='username'>
+                            <Input />
+                        </Form.Item>
 
-                    <Form.Item name='username' label='username'>
-                        <Input />
-                    </Form.Item>
-
-                    <Form.Item name='password' label='password'>
-                        <Input />
-                    </Form.Item>
+                        <Form.Item name='password' label='password'>
+                            <Input />
+                        </Form.Item>
 
 
-                    <div className="d-flex align-items-center justify-content-between">
-                        <Link to='/register'>Click here to Register</Link>
-                        <Button type='primary' htmlType='submit' >Login</Button>
-                    </div>
-                </Form>
-            </div>
-        </div>
+                        <div className="d-flex align-items-center justify-content-between">
+                            <Link to='/register'>Click here to Register</Link>
+                            <Button type='primary' htmlType='submit'>Login</Button>
+                        </div>
+                    </Form>
+                </div>
+            </div></>
     );
 }
 
